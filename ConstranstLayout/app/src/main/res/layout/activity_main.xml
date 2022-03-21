@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#567DDF"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/constraintLayout1"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Số A"
+            android:textSize="26dp"
+            android:id="@+id/tvSoA"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp"/>
+
+        <EditText
+            android:id="@+id/edSoA"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tvSoA"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Số B"
+            android:textSize="26dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvSoB"
+            app:layout_constraintTop_toBottomOf="@+id/tvSoA"/>
+        <EditText
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/edSoB"
+            app:layout_constraintTop_toBottomOf="@+id/edSoA"
+            app:layout_constraintStart_toEndOf="@+id/tvSoB"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/constraintLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1"
+        tools:ignore="MissingConstraints">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCong"
+            android:text="+"
+            android:textSize="26dp"
+            android:onClick="XuLyCong"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTru"
+            android:text="-"
+            android:textSize="26dp"
+            app:layout_constraintStart_toEndOf="@+id/btnCong"
+            android:onClick="XuLyTru"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnNhan"
+            android:text="*"
+            android:textSize="26dp"
+            app:layout_constraintStart_toEndOf="@+id/btnTru"
+            android:onClick="XuLyNhan"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnChia"
+            android:text="/"
+            android:textSize="26dp"
+            app:layout_constraintStart_toEndOf="@+id/btnNhan"
+            android:onClick="XuLyChia"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+        android:id="@+id/tvKQ"
+        android:text="Kết quả hiển thị tại đây"
+        android:textSize="26dp"
+        android:textColor="#EDE3DE"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
